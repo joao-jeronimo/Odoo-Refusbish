@@ -8,6 +8,8 @@
     ],
     'depends': [
         'base',
+        # Kanban for attachment preview:
+        'mail',
         ],
     'auto_install': False,
 }
