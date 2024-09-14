@@ -6,7 +6,7 @@
         'views_and_actions.xml',
     ],
     'depends': [
-        'base','
+        'base',
         ],
     'auto_install': False,
 }
