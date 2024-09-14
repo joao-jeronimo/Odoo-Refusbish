@@ -4,6 +4,7 @@
     'author': 'João Jerónimo',
     'data': [
         'views_and_actions.xml',
+        'ir.model.access.csv',
     ],
     'depends': [
         'base',
