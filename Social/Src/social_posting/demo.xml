@@ -4,6 +4,7 @@
     <record model="social.post" id="demo_musp_congress_nr15">
         <field name="subject">15°. ENCONTRO DO MOVIMENTO DE UTENTES DE SERVIÇOS PÚBLICOS</field>
         <field name="post_body">No passado dia 15 de março, na Associação "A Fábrica", em Coimbra, realizou-se o 15°. Encontro do Movimento de Utentes de Serviços Públicos. Reunindo amigos e ativistas de todo o país, alí se partilharam as experiências de intervenção e luta em defesa de mais e melhoree serviços públicos como componente essencial da democracia.</field>
+        <field name="publish_notes">Falta Instagram</field>
     </record>
 
 </odoo>

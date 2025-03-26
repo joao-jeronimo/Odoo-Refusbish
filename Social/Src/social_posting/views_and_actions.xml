@@ -8,6 +8,7 @@
             <tree>
                 <field name="subject" />
                 <field name="publish_date" />
+                <field name="publish_notes" />
             </tree>
         </field>
     </record>
@@ -39,7 +40,7 @@
                         </page>
                         <page string="Publish">
                             <group>
-                                <field name="publish_notes" mode="kanban" />
+                                <field name="publish_notes" />
                             </group>
                         </page>
                     </notebook>

@@ -15,7 +15,7 @@ class SocialPost(models.Model):
 
     publish_date = fields.Date("Publish date")
     photos_ids = fields.One2many("ir.attachment", inverse_name="photo_of_socpost_id", string="Post photos")
-    publish_notes = fields.Text("Publish notes")
+    publish_notes = fields.Char("Publish notes")
 
     def button_was_published_today(self):
         """
