@@ -24,6 +24,14 @@ class TestSocialPost(TESTCASE_FATHER_CLASS, omwl.testing.AssertLib):
         self.post_musp_congress_nr15.publish_date = self.date_2023_06_02
         with self.assertRaises(UserError):
             self.post_musp_congress_nr15.button_was_published_today()
+
+    def test_unlink_fails_on_published_posts(self):
+        """
+        One cannot unlink published posts.
+        """
+        self.post_musp_congress_nr15.publish_date = self.date_2023_06_02
+        with self.assertRaises(UserError):
+            self.post_musp_congress_nr15.unlink()
     
     #######################################################################
     #######################################################################

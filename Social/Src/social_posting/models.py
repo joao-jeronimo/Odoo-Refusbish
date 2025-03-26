@@ -28,3 +28,11 @@ class SocialPost(models.Model):
                     'publish_date'  : self.publish_date,
                     })
             self.publish_date = fields.Date.today()
+
+    def unlink(selves):
+        """
+        Sets a post as having being published today.
+        """
+        if any(selves.filtered(lambda self: self.publish_date)):
+            raise UserError(_("One cannot delete published posts. Clear the publish date if you really need to delete such a post."))
+        super(SocialPost, selves).unlink()
