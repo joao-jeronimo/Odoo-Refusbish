@@ -5,7 +5,10 @@
     'data': [
         'views_and_actions.xml',
         'ir.model.access.csv',
-    ],
+        ],
+    'demo': [
+        'demo.xml',
+        ],
     'depends': [
         'base',
         # Kanban for attachment preview:

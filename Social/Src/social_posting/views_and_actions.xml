@@ -17,12 +17,18 @@
         <field name="model">social.post</field>
         <field name="arch" type="xml">
             <form>
-                <group>
-                    <field name="subject" />
-                    <field name="publish_date" />
-                    <field name="details" />
-                    <field name="photos_ids" mode="kanban" />
-                </group>
+                <header>
+                    <button type="object" name="button_was_published_today" string="Published Today"
+                        invisible="publish_date!=False" class="oe_highlight" />
+                </header>
+                <sheet>
+                    <group>
+                        <field name="subject" />
+                        <field name="publish_date" />
+                        <field name="details" />
+                        <field name="photos_ids" mode="kanban" />
+                    </group>
+                </sheet>
             </form>
         </field>
     </record>
