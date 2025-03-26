@@ -3,6 +3,7 @@
     'version': 'ODOO_RELEASE.0.1',
     'author': 'João Jerónimo',
     'data': [
+        'security.xml',
         'views_and_actions.xml',
         'ir.model.access.csv',
         ],

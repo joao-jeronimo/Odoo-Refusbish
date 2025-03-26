@@ -9,6 +9,8 @@ class IrAttachment(models.Model):
 class SocialPost(models.Model):
     _name = 'social.post'
     _rec_name = "subject"
+
+    company_id = fields.Many2one("res.company", required=True, string="Company", default=lambda self: self.env.user.company_id.id)
     
     subject = fields.Char("Subject", required=True)
     post_body = fields.Text("Body", required=True)

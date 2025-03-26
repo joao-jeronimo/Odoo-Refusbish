@@ -24,6 +24,7 @@
                 </header>
                 <sheet>
                     <group>
+                        <field name="company_id" groups="base.group_multi_company" />
                         <field name="subject" />
                         <field name="publish_date" />
                     </group>
