@@ -7,8 +7,11 @@ class IrAttachment(models.Model):
 
 class SocialPost(models.Model):
     _name = 'social.post'
+    _rec_name = "subject"
     
-    name = fields.Char("Name", required=True)
+    subject = fields.Char("Subject", required=True)
     details = fields.Text("Details")
+
+    publish_date = fields.Date("Publish date")
     
     photos_ids = fields.One2many("ir.attachment", inverse_name="photo_of_socpost_id", string="Post photos")
