@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <record id="view_social_post_tree" model="ir.ui.view">
+        <field name="name">view_social_post_tree</field>
+        <field name="model">social.post</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    
+    <record id="view_social_post_form" model="ir.ui.view">
+        <field name="name">view_social_post_form</field>
+        <field name="model">social.post</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name" />
+                    <field name="details" />
+                    <field name="photos_ids" mode="kanban" />
+                </group>
+            </form>
+        </field>
+    </record>
+    
+    <record id="action_social_post" model="ir.actions.act_window">
+        <field name="name">Social Posts</field>
+        <field name="res_model">social.post</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="menu_social_post"
+        action="action_social_post"
+        name="Social Posts"
+        sequence="30"
+        groups="base.group_user"
+        />
+
+</odoo>
