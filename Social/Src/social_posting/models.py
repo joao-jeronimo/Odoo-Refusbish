@@ -11,23 +11,23 @@ class SocialPost(models.Model):
     _rec_name = "subject"
     
     subject = fields.Char("Subject", required=True)
-    details = fields.Text("Details")
+    post_body = fields.Text("Body", required=True)
 
     publish_date = fields.Date("Publish date")
-    
     photos_ids = fields.One2many("ir.attachment", inverse_name="photo_of_socpost_id", string="Post photos")
+    publish_notes = fields.Text("Publish notes")
 
-    def button_was_published_today(selves):
+    def button_was_published_today(self):
         """
         Sets a post as having being published today.
         """
-        for self in selves:
-            if self.publish_date:
+        for post in self:
+            if post.publish_date:
                 raise UserError(_("Post «%(subject)s» was published on %(publish_date)s.") % {
-                    'subject'       : self.subject,
-                    'publish_date'  : self.publish_date,
+                    'subject'       : post.subject,
+                    'publish_date'  : post.publish_date,
                     })
-            self.publish_date = fields.Date.today()
+            post.publish_date = fields.Date.today()
 
     def unlink(selves):
         """

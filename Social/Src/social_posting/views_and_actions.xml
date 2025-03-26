@@ -25,9 +25,24 @@
                     <group>
                         <field name="subject" />
                         <field name="publish_date" />
-                        <field name="details" />
-                        <field name="photos_ids" mode="kanban" />
                     </group>
+                    <notebook>
+                        <page string="Composition">
+                            <group>
+                                <field name="post_body" />
+                            </group>
+                        </page>
+                        <page string="Multimedia">
+                            <group>
+                                <field name="photos_ids" mode="kanban" />
+                            </group>
+                        </page>
+                        <page string="Publish">
+                            <group>
+                                <field name="publish_notes" mode="kanban" />
+                            </group>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
