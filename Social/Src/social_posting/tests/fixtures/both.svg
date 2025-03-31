@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="both.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.22444946"
+     inkscape:cx="723.99371"
+     inkscape:cy="559.14591"
+     inkscape:window-width="1024"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="210"
+       height="297"
+       id="page1"
+       margin="0"
+       bleed="0" />
+    <inkscape:page
+       x="220"
+       y="0"
+       width="210"
+       height="297"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <rect
+       x="957.89937"
+       y="129.20503"
+       width="66.830189"
+       height="325.24025"
+       id="rect4" />
+    <rect
+       x="1011.3635"
+       y="432.16855"
+       width="347.51698"
+       height="133.66038"
+       id="rect3" />
+  </defs>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:48.337px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:90.8884;fill:#000000;stroke-width:4.02807"
+       x="32.649181"
+       y="137.67198"
+       id="text2"
+       transform="matrix(1.9348577,0,0,3.0566988,-43.256157,-245.00983)"><tspan
+         x="32.649181"
+         y="137.67198"
+         id="tspan1">one</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(8.6330982,0,0,12.864238,-8497.2978,-5513.4889)"
+       id="text3"
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect3);fill:#000000"><tspan
+         x="1011.3633"
+         y="443.11593"
+         id="tspan2">two</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text4"
+       style="fill:#000000;text-align:start;writing-mode:lr-tb;text-orientation:auto;direction:ltr;white-space:pre;shape-inside:url(#rect4)" />
+  </g>
+</svg>
