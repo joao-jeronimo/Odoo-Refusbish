@@ -1,9 +1,9 @@
-import odoo_module_writers_lib as omwl, odoo, datetime
+import odoo_module_writers_lib as omwl, odoo, datetime, multimedia_assert, base64
 from odoo.tests.common import TESTCASE_FATHER_CLASS, Form
 from odoo.addons.base_testing.tests.common import IrAttachmentTestingMixin
 from odoo.exceptions import UserError, ValidationError
 
-class TestSocialPost(TESTCASE_FATHER_CLASS, omwl.testing.AssertLib, IrAttachmentTestingMixin):
+class TestSocialPost(TESTCASE_FATHER_CLASS, omwl.testing.AssertLib, IrAttachmentTestingMixin, multimedia_assert.MultimediaAssert):
     """
     Testcase for the social.post model.
     """
@@ -13,7 +13,16 @@ class TestSocialPost(TESTCASE_FATHER_CLASS, omwl.testing.AssertLib, IrAttachment
         Method render_pdf_pages() must return a recordset of attachments
         containing PDF pages.
         """
-        self.assertFalse( True )
+        pdfpages = self.attach_pdf_both.render_pdf_pages()
+        # There should be both two of them:
+        self.assertLength(pdfpages, 2)
+        # Each with it's own legitimate dimms:
+        self.assertImageDataDimms(
+            base64.b64decode(pdfpages[0].with_context(bin_size=False).datas),
+            (378, 756))
+        self.assertImageDataDimms(
+            base64.b64decode(pdfpages[1].with_context(bin_size=False).datas),
+            (756, 1134))
 
     #######################################################################
     #######################################################################
