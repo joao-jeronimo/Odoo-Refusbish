@@ -11,7 +11,7 @@
         'demo.xml',
         ],
     'depends': [
-        'base',
+        'base_testing',
         # Kanban for attachment preview:
         'mail',
         ],
