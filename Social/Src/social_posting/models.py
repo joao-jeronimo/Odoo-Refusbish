@@ -27,7 +27,7 @@ class IrAttachment(models.Model):
             wanted_page.save(fakefile, 'PNG')
             page_bytes = fakefile.getvalue()
             # Create our attachment:
-            self.env['ir.attachment'].create({
+            gened_pages += self.env['ir.attachment'].create({
                 'name'      : "%s Page %d.png" % (self.name, pagei),
                 'datas'     : base64.b64encode(page_bytes),
                 })
