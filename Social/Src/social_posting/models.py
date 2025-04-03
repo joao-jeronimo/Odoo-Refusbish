@@ -16,7 +16,7 @@ class IrAttachment(models.Model):
         # Get the data:
         source_pdf_data = base64.b64decode(self.with_context(bin_size=False).datas)
         # Split PDF in pages and get the wanted page:
-        pdf_pages = convert_from_bytes(source_pdf_data, dpi = 300)
+        pdf_pages = convert_from_bytes(source_pdf_data, dpi = 96)
         # Process each page:
         gened_pages = self.env['ir.attachment']
         for pagei in range(len(pdf_pages)):
