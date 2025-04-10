@@ -9,6 +9,12 @@ class IrAttachment(models.Model):
     
     photo_of_socpost_id = fields.Many2one("social.post", string="Post")
 
+    def button_render_pdf_pages(self):
+        """
+        Render pages of a PDF.
+        """
+        self.render_pdf_pages()
+
     def render_pdf_pages(self):
         """
         Creates a PNG attachment for each PDF page.

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    
+
+    <record id="view_document_file_kanban" model="ir.ui.view">
+        <field name="name">view_document_file_kanban</field>
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="mail.view_document_file_kanban" />
+        <field name="arch" type="xml">
+            <xpath expr="//t[@t-name='kanban-menu']" position="inside">
+                <a role="menuitem" type="object" class="dropdown-item" name="button_render_pdf_pages">Render PDF pages</a>
+            </xpath>
+        </field>
+    </record>
+
     <record id="view_social_post_tree" model="ir.ui.view">
         <field name="name">view_social_post_tree</field>
         <field name="model">social.post</field>
