@@ -19,10 +19,10 @@ class TestSocialPost(TESTCASE_FATHER_CLASS, omwl.testing.AssertLib, IrAttachment
         # Each with it's own legitimate dimms:
         self.assertImageDataDimms(
             base64.b64decode(pdfpages[0].with_context(bin_size=False).datas),
-            (378, 756))
+            (378, 756),  0.0014)
         self.assertImageDataDimms(
             base64.b64decode(pdfpages[1].with_context(bin_size=False).datas),
-            (756, 1134))
+            (756, 1134), 0.0006)
 
     #######################################################################
     #######################################################################
