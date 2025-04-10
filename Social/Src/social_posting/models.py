@@ -6,6 +6,7 @@ from pdf2image import convert_from_path, convert_from_bytes
 
 class IrAttachment(models.Model):
     _inherit = 'ir.attachment'
+    
     photo_of_socpost_id = fields.Many2one("social.post", string="Post")
 
     def render_pdf_pages(self):
@@ -28,6 +29,7 @@ class IrAttachment(models.Model):
             page_bytes = fakefile.getvalue()
             # Create our attachment:
             gened_pages += self.env['ir.attachment'].create({
+                'photo_of_socpost_id' : self.photo_of_socpost_id.id,
                 'name'      : "%s Page %d.png" % (self.name, pagei),
                 'datas'     : base64.b64encode(page_bytes),
                 })

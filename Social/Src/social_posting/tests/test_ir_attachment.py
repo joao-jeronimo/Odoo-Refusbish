@@ -8,7 +8,7 @@ class TestSocialPost(TESTCASE_FATHER_CLASS, omwl.testing.AssertLib, IrAttachment
     Testcase for the social.post model.
     """
 
-    def test_render_pdf_pages(self):
+    def test_render_pdf_pages_renders_pdf_pages(self):
         """
         Method render_pdf_pages() must return a recordset of attachments
         containing PDF pages.
@@ -24,6 +24,18 @@ class TestSocialPost(TESTCASE_FATHER_CLASS, omwl.testing.AssertLib, IrAttachment
             base64.b64decode(pdfpages[1].with_context(bin_size=False).datas),
             (756, 1134), 0.0006)
 
+    def test_render_pdf_pages_links_rendered_pages_to_same_post(self):
+        """
+        Method render_pdf_pages() must link rendered pages to
+        the same post as the original PDF.
+        """
+        # Link the pdf to the post:
+        self.attach_pdf_both.photo_of_socpost_id = self.post_musp_congress_nr15
+        # Render and assert:
+        pdfpages = self.attach_pdf_both.render_pdf_pages()
+        self.assertRecordsEqual(pdfpages[0].photo_of_socpost_id, self.post_musp_congress_nr15)
+        self.assertRecordsEqual(pdfpages[1].photo_of_socpost_id, self.post_musp_congress_nr15)
+
     #######################################################################
     #######################################################################
     #######################################################################
@@ -31,5 +43,5 @@ class TestSocialPost(TESTCASE_FATHER_CLASS, omwl.testing.AssertLib, IrAttachment
     def setUpClass(self):
         super(TestSocialPost, self).setUpClass()
         self.testcase_filepath = __file__
-        # Attachments:
+        self.post_musp_congress_nr15 = self.env.ref('social_posting.demo_musp_congress_nr15')
         self.attach_pdf_both = self.aux_create_attachment_from_file(self, "fixtures/both.pdf")
