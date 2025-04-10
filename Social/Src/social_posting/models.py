@@ -41,14 +41,23 @@ class IrAttachment(models.Model):
                 })
         return gened_pages
 
+class SocialMatter(models.Model):
+    _name = 'social.matter'
+    _description = "The matters that a post may be about."
+    name = fields.Char("Description", required=True)
+    posts_ids = fields.One2many("social.post", inverse_name="matter_id", string="Posts about this matter")
+
 class SocialPost(models.Model):
     _name = 'social.post'
+    _description = "A post for social networks, with pictures."
     _rec_name = "subject"
 
     company_id = fields.Many2one("res.company", required=True, string="Company", default=lambda self: self.env.user.company_id.id)
     
     subject = fields.Char("Subject", required=True)
     post_body = fields.Text("Body", required=True)
+
+    matter_id = fields.Many2one("social.matter", string="Post main matter", required=True)
 
     publish_date = fields.Date("Publish date")
     photos_ids = fields.One2many("ir.attachment", inverse_name="photo_of_socpost_id", string="Post photos")
