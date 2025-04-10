@@ -12,6 +12,7 @@ class TestSocialPost(TESTCASE_FATHER_CLASS, omwl.testing.AssertLib):
         Method button_was_published_today() sets the publish date as baing
         today, as the name suggests.
         """
+        self.post_musp_congress_nr15.publish_date = False
         self.assertFalse( self.post_musp_congress_nr15.publish_date )
         self.post_musp_congress_nr15.button_was_published_today()
         self.assertEqual( self.post_musp_congress_nr15.publish_date, self.date_real_today )
